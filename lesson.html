@@ -1,0 +1,63 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Learning Topic • Google Singapore Roadmap</title><style>
+*{box-sizing:border-box}body{font:16px system-ui,-apple-system,Segoe UI,sans-serif;background:#0b1224;color:#f0f5ff;margin:0;line-height:1.6}main{max-width:1020px;padding:28px 20px 70px;margin:auto}header{border-bottom:1px solid #2d3d59;padding:18px 24px}.brand{color:#88b6ff;font-weight:800;text-decoration:none}.back{color:#94bcff;text-decoration:none}.muted{color:#a9bcd6}.tag{font-size:12px;color:#a4c8ff;letter-spacing:1px;text-transform:uppercase}.grid{display:grid;grid-template-columns:1.35fr 1fr;gap:18px}.card{background:#15213a;border:1px solid #314766;border-radius:18px;padding:24px;margin:18px 0}h1{font-size:clamp(30px,5vw,48px);line-height:1.12;margin:12px 0}h2{margin-top:5px;font-size:22px}li{padding:5px 0}a{color:#91c2ff}.source{display:block;border:1px solid #365277;padding:13px;border-radius:10px;margin:9px 0;text-decoration:none;background:#1c3050}.source span{display:block;font-size:12px;color:#aabbce}.source:hover{background:#28466d}.btn{border:0;display:inline-block;border-radius:10px;padding:12px 18px;background:#327af0;color:white;font-weight:700;cursor:pointer;text-decoration:none}.block{display:block}.code{white-space:pre-wrap;background:#081328;border:1px solid #2a405f;padding:17px;border-radius:12px;color:#c9e1ff;overflow:auto}footer{color:#91a4bd;text-align:center;padding:24px}@media(max-width:740px){.grid{grid-template-columns:1fr}}</style></head><body><header><a class="brand" href="./index.html">★ CareerLaunch / Singapore</a></header><main><a class="back" href="./index.html#roadmap">← Back to career roadmap</a><div class="tag" id="category">Learning topic</div><h1 id="title">Learning topic</h1><p class="muted" id="intro"></p><div class="grid"><div><section class="card"><h2>Why this matters</h2><p id="importance"></p></section><section class="card"><h2>Key concepts to learn</h2><ul id="concepts"></ul></section><section class="card"><h2>Hands-on practice</h2><p id="exercise"></p><pre class="code" id="example"></pre></section></div><aside><section class="card"><h2>Relevant sources</h2><p class="muted">Documentation, YouTube tutorial discovery and practical labs selected by topic.</p><div id="sources"></div></section><section class="card"><h2>Learning checklist</h2><label><input type="checkbox" id="topicComplete"> I completed this lesson and the exercise</label><p class="muted">Saved locally in this browser.</p><a class="btn block" href="./index.html#roadmap">Return to roadmap →</a></section></aside></div></main><footer>Personal learning plan · Not affiliated with Google</footer>
+<script>
+const roadmap=[
+["Python fundamentals and functions","Write a Python log-parser script"],
+["Linux services and processes","Troubleshoot DNS and networking"],
+["Git branching and pull requests","Publish a GitHub project"],
+["Deploy a Compute Engine virtual machine","Implement least-privilege IAM"],
+["Build Google Cloud VPC networking","Deploy an application to Cloud Run"],
+["Infrastructure as code with Terraform","Associate Cloud Engineer exam preparation"],
+["IAM access security and role review","Service accounts and workload identity"],
+["Docker container fundamentals","Kubernetes deployments and scaling"],
+["Cloud logging, metrics and alerts","Incident response and postmortems"],
+["Write technical resume achievements","Develop STAR interview stories"],
+["Coding interview practice","System design and troubleshooting interviews"],
+["Publish technical portfolio case studies","Apply for Google Singapore opportunities"]
+];
+const descriptions=[
+["Learn Python syntax, variables, collections, control flow and reusable functions.","Write a script that safely reads example logs, extracts event types and produces counts."],
+["Learn how Linux services, files, permissions and running processes work.","Use safe diagnostics to investigate DNS queries, network ports and connectivity."],
+["Use Git to track changes, create branches, review differences and collaborate.","Publish an original project with clear setup instructions, screenshots and tests."],
+["Understand virtual machines, images, regions, firewalls and cloud costs.","Understand principals, roles, resources and minimal access policies."],
+["Learn subnets, routes, firewall rules and network isolation.","Learn how to deploy and monitor a managed web service."],
+["Learn declarative configuration, state, plan, apply and destroy.","Understand exam domains and practice Google Cloud operations."],
+["Review role permissions and practice least-privilege security.","Use workload identities and avoid embedding long-lived service account secrets."],
+["Build and run reproducible isolated application containers.","Learn Pods, Deployments, Services and Kubernetes observability."],
+["Understand metrics, logs, traces and meaningful service alerts.","Practice diagnosing an outage and preparing a blameless postmortem."],
+["Convert technical work into specific, quantified career achievements.","Use Situation, Task, Action and Result to tell convincing interview stories."],
+["Practice algorithms, problem decomposition and edge-case tests.","Design resilient systems and explain trade-offs clearly."],
+["Document architecture, implementation, tests and impact without disclosing secrets.","Review open roles in Singapore and apply according to actual eligibility."]
+];
+const docs=[
+["https://docs.python.org/3/tutorial/","https://docs.python.org/3/howto/logging.html"],["https://documentation.ubuntu.com/server/","https://cloud.google.com/dns/docs/overview"],["https://git-scm.com/book/en/v2","https://docs.github.com/en/repositories"],["https://cloud.google.com/compute/docs/overview","https://cloud.google.com/iam/docs/overview"],["https://cloud.google.com/vpc/docs/vpc","https://cloud.google.com/run/docs/overview/what-is-cloud-run"],["https://developer.hashicorp.com/terraform/tutorials/gcp-get-started","https://cloud.google.com/learn/certification/cloud-engineer"],["https://cloud.google.com/iam/docs/using-iam-securely","https://cloud.google.com/iam/docs/workload-identity-federation"],["https://docs.docker.com/get-started/","https://kubernetes.io/docs/tutorials/kubernetes-basics/"],["https://cloud.google.com/monitoring/docs/monitoring-overview","https://sre.google/sre-book/postmortem-culture/"],["https://www.google.com/about/careers/applications/","https://careers.google.com/how-we-hire/"],["https://developers.google.com/edu/python/exercises/basic","https://sre.google/books/"],["https://cloud.google.com/architecture/framework","https://www.google.com/about/careers/applications/jobs/results/"]
+];
+const concepts=[
+[["Python data types and operators","Conditionals and loops","Defining functions with arguments and returns","Modules and exception handling"],["File IO and pathlib","Regular expressions and split","Logging levels and timestamps","CSV report generation and tests"]],
+[["Processes and systemctl","Linux permissions and users","Journal and system logs","Resource usage"],["DNS resolution with dig/nslookup","TCP/IP and routing","Port inspection with ss","Diagnosing failures systematically"]],
+[["Commits and commit history","Branching and merging","Pull request reviews","Resolving merge conflicts"],["Writing README instructions","Repository organization","Safe sample data","Versioning and tests"]],
+[["VM instances and regions","Firewall rules and VPC access","SSH and monitoring","Budget awareness"],["Identity and roles","Least privilege","Policy inheritance","Permission testing"]],
+[["VPC and subnet design","Routes and firewall rules","IP addressing","Network connectivity"],["Container deployment","Authentication and ingress","Logs and revisions","Autoscaling"]],
+[["Terraform providers and resources","State management","Plan/apply/destroy","Configuration reuse"],["Cloud infrastructure domains","Networking and IAM","Cost and operations","Timed scenario practice"]],
+[["Access reviews","Predefined versus custom roles","Audit trails","Privilege boundaries"],["Identity federation","Service accounts","Short-lived credentials","Keyless authentication"]],
+[["Dockerfiles","Images and containers","Ports and volumes","Container debugging"],["Pods and Deployments","Services and networking","Scaling and health probes","Logs"]],
+[["Metrics, logs and alerts","SLIs and SLOs","Diagnostic dashboards","Reducing alert noise"],["Incident triage","Timeline and impact","Root cause analysis","Preventative actions"]],
+[["Quantified outcomes","Relevant role keywords","Concise achievements","Confidentiality"],["Situation and task","Actions and technical reasoning","Results and lessons","Clear communication"]],
+[["Lists and dictionaries","Complexity and algorithms","Testing edge cases","Readable solutions"],["Reliability and scaling","Load balancing and caches","Failure modes","Clear diagrams"]],
+[["Architecture and README","Demonstrable tests","Trade-offs and lessons","Sanitized screenshots"],["Matching role requirements","Singapore location filters","Application tracking","Interview scheduling"]]
+];
+const lessons={
+"0-0":{importance:"Python is essential for infrastructure automation, cloud support, incident analysis and technical interviews. Functions make scripts easier to reuse, test and maintain.",exercise:"Create a function summarize(numbers) that returns count, minimum, maximum and average. Test normal, empty and invalid inputs.",example:"def summarize(numbers):\n    if not numbers:\n        return None\n    return {\n        'count': len(numbers),\n        'minimum': min(numbers),\n        'maximum': max(numbers),\n        'average': sum(numbers) / len(numbers)\n    }\n\nprint(summarize([4, 8, 12]))"},
+"0-1":{importance:"Log parsing is directly useful for monitoring, troubleshooting and incident response; it also demonstrates practical Python scripting skills.",exercise:"Create a file with sample INFO/WARN/ERROR lines, read it, count each level and export results to CSV. Do not use private production logs.",example:"from collections import Counter\nfrom pathlib import Path\n\ncounts = Counter()\nfor line in Path('sample.log').read_text().splitlines():\n    for level in ('INFO', 'WARN', 'ERROR'):\n        if (' '+level+' ') in line:\n            counts[level] += 1\n            break\nprint(dict(counts))"}
+};
+const params=new URLSearchParams(location.search);let month=Number(params.get("month")),item=Number(params.get("item"));if(!Number.isInteger(month)||month<0||month>=roadmap.length)month=0;if(!Number.isInteger(item)||item<0||item>1)item=0;
+const topic=roadmap[month][item],id=month+"-"+item,special=lessons[id];
+function txt(id,v){document.getElementById(id).textContent=v}
+txt("title",topic);document.title=topic+" | CareerLaunch";txt("category","MONTH "+String(month+1).padStart(2,"0")+" / LESSON "+(item+1));txt("intro",descriptions[month][item]);txt("importance",special?.importance||"This topic builds practical foundations for Google Cloud Technical Solutions Engineer roles in Singapore. Learn the concepts, explain the trade-offs and validate your understanding with a small demonstrable project.");
+document.getElementById("concepts").innerHTML=concepts[month][item].map(x=>"<li>"+x+"</li>").join("");
+txt("exercise",special?.exercise||"Build a small, safe demonstration of "+topic.toLowerCase()+". Record the steps, expected output, errors encountered and how you verified success.");
+txt("example",special?.example||"Practice plan:\n1. Read the official reference.\n2. Build a minimal working example.\n3. Test a successful case and a failure case.\n4. Document the outcome in GitHub.");
+const links=[["Official / reference documentation",docs[month][item]],["YouTube tutorials (topic search)","https://www.youtube.com/results?search_query="+encodeURIComponent(topic+" tutorial")],["Google Skills / labs","https://www.skills.google/"]];
+document.getElementById("sources").innerHTML=links.map(([title,url])=>'<a class="source" target="_blank" rel="noopener noreferrer" href="'+url+'">'+title+' ↗<span>'+url.split("/")[2]+'</span></a>').join("");
+const box=document.getElementById("topicComplete"),key="google_sg_career_v1";let stored={};try{stored=JSON.parse(localStorage.getItem(key)||"{}")}catch{}box.checked=!!stored.checked?.[id];box.addEventListener("change",()=>{stored.checked=stored.checked||{};stored.checked[id]=box.checked;localStorage.setItem(key,JSON.stringify(stored))});
+</script></body></html>
