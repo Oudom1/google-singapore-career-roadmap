@@ -1,0 +1,26 @@
+name: Course Navigation QA
+on:
+  push:
+    branches: [feature/separate-course-pages]
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Check dedicated course scripts and links
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+          import re
+          index=Path('index.html').read_text()
+          course=Path('course.html').read_text()
+          assert 'id="course-directory"' in index
+          assert len(re.findall(r'href="./course.html\\?track=',index))==11
+          assert 'google_sg_python_catalog_v1' in course
+          assert 'google_sg_skill_library_v1' in course
+          Path('/tmp/course-script.js').write_text(course.split('<script>')[-1].split('</script>')[0])
+          PY
+          node --check /tmp/course-script.js
