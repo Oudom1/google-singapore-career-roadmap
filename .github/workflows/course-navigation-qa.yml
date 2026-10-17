@@ -18,7 +18,7 @@ jobs:
           index=Path('index.html').read_text()
           course=Path('course.html').read_text()
           assert 'id="course-directory"' in index
-          assert len(re.findall(r'href="./course.html\\?track=',index))==11
+          assert index.count('href="./course.html?track=')==11
           assert 'google_sg_python_catalog_v1' in course
           assert 'google_sg_skill_library_v1' in course
           Path('/tmp/course-script.js').write_text(course.split('<script>')[-1].split('</script>')[0])
